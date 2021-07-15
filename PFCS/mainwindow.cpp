@@ -126,3 +126,5 @@ void MainWindow::on_pushButton_3_clicked()
     ui->LblFormula->setText(formula);
     ui->RespuestaProbabilidad->setText(QString::number(sumatoria));
 }
+
+

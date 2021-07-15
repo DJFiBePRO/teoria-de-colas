@@ -106,15 +106,15 @@ double CalcularLn(double miu,double landa, double M, double K)
     double respuestaLn = CalcularLq(miu,landa,M,K) / CalcularPe(miu,landa,M,K);
     return respuestaLn;
 }
-double CalcularW(double miu,double landa, double M, double K)
-{
-    double respuestaW = CalcularL(miu,landa,M,K) / landa;
-    return respuestaW;
-}
 double CalcularWq(double miu,double landa, double M, double K)
 {
-    double respuestaWq = CalcularLq(miu,landa,M,K) /landa;
+    double respuestaWq = CalcularLq(miu,landa,M,K) /((M-CalcularL(miu,landa,M,K) *landa));
     return respuestaWq;
+}
+double CalcularW(double miu,double landa, double M, double K)
+{
+    double respuestaW = CalcularWq(miu,landa,M,K)+(1/miu);
+    return respuestaW;
 }
 double CalcularWn(double miu,double landa, double M, double K)
 {
