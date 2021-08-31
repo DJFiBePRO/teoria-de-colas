@@ -1,11 +1,11 @@
 #ifndef FUNC_PFCM_H
 #define FUNC_PFCM_H
 #include "math.h"
-double Factorial(int a)
+double Factorial(double a)
 {
     double b = 1;
 
-    for (int num = a; num >= 1; num--)
+    for (double num = a; num >= 1; num--)
     {
         b *= num;
     }
@@ -19,14 +19,14 @@ double CalcularPo(double miu,double landa, double M, double K)
 
     for (int n = 0; n <= (K-1); n++)
     {
-        double respuesta1 = (Factorial((int)M) / (Factorial(((int)M - n))*Factorial(n))) * pow((landa / miu), n);
+        double respuesta1 = (Factorial(M) / (Factorial(M - n)*Factorial(n))) * pow((landa / miu), n);
         sumatoria1 = sumatoria1 + respuesta1;
     }
 
     // segunda parte
-    for (int n = (int)K ; n <= M; n++)
+    for (int n = K ; n <= M; n++)
     {
-        double respuesta2 = (Factorial((int)M) / (Factorial(((int)M - n)) * Factorial((int)K) *(pow(K,(n-K))))) * pow((landa / miu), n);
+        double respuesta2 = (Factorial(M) / (Factorial(M - n) * Factorial(K) *(pow(K,(n-K))))) * pow((landa / miu), n);
         sumatoria2 = sumatoria2 + respuesta2;
     }
     double respuestaPo = 1 / (sumatoria1+sumatoria2);
@@ -37,11 +37,11 @@ double CalcularPn(double miu,double landa, double M, double K,double N)
     double respuestaPn = 0;
     if (N >= 0 && N <= K)
     {
-        respuestaPn  = CalcularPo(miu,landa,M,K) * (Factorial((int)M) / (Factorial(((int)M - (int)N)) * Factorial((int)N))) * pow((landa / miu), N);
+        respuestaPn  = CalcularPo(miu,landa,M,K) * (Factorial(M) / (Factorial(M - N) * Factorial(N))) * pow((landa / miu), N);
     }
     else
     {
-        respuestaPn = CalcularPo(miu,landa,M,K) * (Factorial((int)M) / (Factorial(((int)M - (int)N)) * Factorial((int)K) * (pow(K, ((int)N - K))))) * pow((landa / miu), N);
+        respuestaPn = CalcularPo(miu,landa,M,K) * (Factorial(M) / (Factorial(M - N) * Factorial(K) * (pow(K, (N - K))))) * pow((landa / miu), N);
     }
     return respuestaPn;
 }
@@ -53,14 +53,14 @@ double CalcularL(double miu,double landa, double M, double K)
     double respuestaL = 0;
     for (int n=0; n<= (K-1); n++)
     {
-        double PnL1= CalcularPo(miu,landa,M,K) * (Factorial((int)M) / (Factorial(((int)M - n)) * Factorial(n))) * pow((landa / miu), n);
+        double PnL1= CalcularPo(miu,landa,M,K) * (Factorial(M) / (Factorial(M - n) * Factorial(n))) * pow((landa / miu), n);
         double respuestaL1 = n * PnL1;
         sumatoriaL1 = sumatoriaL1 + respuestaL1;
     }
 
-    for (int n = (int)K; n <= M; n++)
+    for (int n = K; n <= M; n++)
     {
-        double PnL2 = CalcularPo(miu,landa,M,K) * (Factorial((int)M) / (Factorial(((int)M - n)) * Factorial((int)K) * (pow(K, (n - K))))) * pow((landa / miu), n);
+        double PnL2 = CalcularPo(miu,landa,M,K) * (Factorial(M) / (Factorial(M - n) * Factorial(K) * (pow(K, (n - K))))) * pow((landa / miu), n);
         double respuestaL2 = (n - K) * PnL2;
         sumatoriaL2 = sumatoriaL2 + respuestaL2;
     }
@@ -69,7 +69,7 @@ double CalcularL(double miu,double landa, double M, double K)
 
     for (int n=0; n<=(K-1); n++)
     {
-        double PnL3 = CalcularPo(miu,landa,M,K) * (Factorial((int)M) / (Factorial(((int)M - n)) * Factorial(n))) * pow((landa / miu), n);
+        double PnL3 = CalcularPo(miu,landa,M,K) * (Factorial(M) / (Factorial(M - n) * Factorial(n))) * pow((landa / miu), n);
         sumatoriaL3 = sumatoriaL3 + PnL3;
     }
 
@@ -81,9 +81,9 @@ double CalcularLq(double miu,double landa, double M, double K)
 {
     double respuestaLq=0;
     double sumatoriaL2 = 0;
-    for (int n = (int)K; n <= M; n++)
+    for (int n = K; n <= M; n++)
     {
-        double PnL2 = CalcularPo(miu,landa,M,K) * (Factorial((int)M) / (Factorial(((int)M - n)) * Factorial((int)K) * (pow(K, (n - K))))) * pow((landa / miu), n);
+        double PnL2 = CalcularPo(miu,landa,M,K) * (Factorial(M) / (Factorial(M - n) * Factorial(K) * (pow(K, (n - K))))) * pow((landa / miu), n);
         double respuestaL2 = (n - K) * PnL2;
         sumatoriaL2 = sumatoriaL2 + respuestaL2;
     }
@@ -93,9 +93,9 @@ double CalcularLq(double miu,double landa, double M, double K)
 double CalcularPe(double miu,double landa, double M, double K)
 {
     double respuestaPe=0;
-    for (int n = (int)K; n <= M; n++)
+    for (int n = K; n <= M; n++)
     {
-        double Pe = CalcularPo(miu,landa,M,K) * (Factorial((int)M) / (Factorial(((int)M - n)) * Factorial((int)K) * (pow(K, (n - K))))) * pow((landa / miu), n);
+        double Pe = CalcularPo(miu,landa,M,K) * (Factorial(M) / (Factorial(M - n) * Factorial(K) * (pow(K, (n - K))))) * pow((landa / miu), n);
         respuestaPe = respuestaPe + Pe;
 
     }

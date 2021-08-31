@@ -1,10 +1,10 @@
 #ifndef FUNC_PICM_H
 #define FUNC_PICM_H
 #include <math.h>
-double Factorial(int a)
+double Factorial(double a)
 {
     double b=1;
-    for(int num=a;num>=1;num--)
+    for(double num=a;num>=1;num--)
     {
         b*=num;
     }
@@ -23,13 +23,13 @@ double CalcularPo(double miu,double landa,double k)
     }
 
     double segundaparte = 0;
-    segundaparte = (1/Factorial((int)k))*(pow((landa/miu), (k))*((k*miu)/((k*miu)-landa)));
+    segundaparte = (1/Factorial(k))*(pow((landa/miu), (k))*((k*miu)/((k*miu)-landa)));
     double respuestaPo=1/(sumatoria+segundaparte);//Respuesta Po
     return respuestaPo;
 }
 double CalcularPk(double miu,double landa,double k)
 {
-    double parteUno=(1 / Factorial((int)k));
+    double parteUno=(1 / Factorial(k));
     double parteDos = pow((landa / miu), k);
     double parteTres = (k * miu) / ((k * miu) - landa);
     double respuestaPk = parteUno * parteDos * parteTres * CalcularPo(miu,landa,k);//Respuesta Pk
@@ -45,18 +45,18 @@ double CalcularPn(double miu,double landa,double k,double n)
     double respuestaPn=0;
     if (n <= k)
     {
-        respuestaPn = (CalcularPo(miu,landa,k)/ Factorial((int)n)) * pow(((landa / miu)), n);
+        respuestaPn = (CalcularPo(miu,landa,k)/ Factorial(n)) * pow(((landa / miu)), n);
     }
     else if (n > k)
     {
-        respuestaPn = (1 / (Factorial((int)k) * (pow(k, (n - k)))) * pow((landa / miu), n)*CalcularPo(miu,landa,k));
+        respuestaPn = (1 / (Factorial(k) * (pow(k, (n - k)))) * pow((landa / miu), n)*CalcularPo(miu,landa,k));
     }
     return respuestaPn;
 }
 double CalcularL(double miu,double landa,double k)
 {
     double arriba = (landa * miu) * pow((landa/miu),k);
-    double abajo = Factorial((int)(k-1))*pow(((k*miu)-landa),2);
+    double abajo = Factorial((k-1))*pow(((k*miu)-landa),2);
     double alado = landa / miu;
 
     double respuestaL = ((arriba/abajo) * CalcularPo(miu,landa,k)) + alado; //Respuesta L
@@ -65,7 +65,7 @@ double CalcularL(double miu,double landa,double k)
 double CalcularLq(double miu,double landa,double k)
 {
     double arribaLq = (landa * miu) * pow((landa / miu), k)*CalcularPo(miu,landa,k);
-    double abajoLq = Factorial((int)(k - 1)) * pow(((k * miu) - landa), 2);
+    double abajoLq = Factorial((k - 1)) * pow(((k * miu) - landa), 2);
 
     double respuestaLq = arribaLq / abajoLq; //Respuesta Lq
     return respuestaLq;
@@ -78,7 +78,7 @@ double CalcularLn(double miu,double landa,double k)
 double CalcularW(double miu,double landa,double k)
 {
     double arribaW = miu * pow((landa / miu), k) * CalcularPo(miu,landa,k);
-    double abajoW = Factorial(((int)k - 1)) * pow(((k * miu) - landa), 2);
+    double abajoW = Factorial((k - 1)) * pow(((k * miu) - landa), 2);
     double aladoW = 1 / miu;
 
     double respuestaW = (arribaW/ abajoW)+aladoW;   //Respuesta W
@@ -87,7 +87,7 @@ double CalcularW(double miu,double landa,double k)
 double CalcularWq(double miu,double landa,double k)
 {
     double arribaWq =miu * pow((landa / miu), k) * CalcularPo(miu,landa,k);
-    double abajoWq = Factorial((int)(k - 1)) * pow(((k * miu) - landa), 2);
+    double abajoWq = Factorial((k - 1)) * pow(((k * miu) - landa), 2);
 
     double respuestaWq = arribaWq/ abajoWq;     //Respuesta Wq
     return respuestaWq;

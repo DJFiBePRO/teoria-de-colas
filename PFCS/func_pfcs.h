@@ -1,11 +1,11 @@
 #ifndef FUNC_PFCS_H
 #define FUNC_PFCS_H
 #include <math.h>
-double Factorial(int a)
+double Factorial(double a)
 {
     double b = 1;
 
-    for (int num = a; num >= 1; num--)
+    for (double num = a; num >= 1; num--)
     {
         b *= num;
     }
@@ -17,7 +17,7 @@ double CalcularPo(double miu,double landa,double M)
 
     for (int n = 0; n <= M; n++)
     {
-        double respuesta = (Factorial((int)M) / Factorial((int)(M - n))) * pow((landa / miu), n);
+        double respuesta = (Factorial(M) / Factorial(M - n)) * pow((landa / miu), n);
         sumatoria = sumatoria + respuesta;
     }
 
@@ -26,7 +26,7 @@ double CalcularPo(double miu,double landa,double M)
 }
 double CalcularPn(double miu,double landa,double M,double N)
 {
-    double respuestaPn = (Factorial((int)M) / Factorial((int)(M - N))) * pow((landa / miu), N) * CalcularPo(miu,landa,M);
+    double respuestaPn = (Factorial(M) / Factorial(M - N)) * pow((landa / miu), N) * CalcularPo(miu,landa,M);
     return respuestaPn;
 }
 double CalcularL(double miu,double landa,double M)
