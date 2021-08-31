@@ -51,12 +51,23 @@ void MainWindow::on_pushButton_3_clicked()
     }
     else if(ui->comboBox->currentIndex()==1)
     {
+        formula.append("(P");
         for(int i=0;i<=num;i++)
         {
-            sumatoria+=CalcularPn(miu,landa,m,k,i);
+            double pn=CalcularPn(miu,landa,m,k,i);
+            formula.append(QString::number(i)+": ");
+            formula.append(QString::number(pn)+" ");
+            if(!(i==num)){
+                formula.append("+ P");
+            }
+            else{
+                formula.append(")");
+            }
+            sumatoria+=pn;
         }
 
     }
+    ui->LblFormula->setText(formula);
     ui->RespuestaProbabilidad->setText(QString::number(sumatoria));
 }
 
