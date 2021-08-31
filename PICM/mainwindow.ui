@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>801</width>
-    <height>674</height>
+    <height>691</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -483,7 +483,7 @@
      <item row="1" column="1">
       <widget class="QLabel" name="RespuestaPo">
        <property name="text">
-        <string/>
+        <string>...</string>
        </property>
       </widget>
      </item>
@@ -497,7 +497,7 @@
      <item row="3" column="1">
       <widget class="QLabel" name="RespuestaPne">
        <property name="text">
-        <string/>
+        <string>...</string>
        </property>
       </widget>
      </item>
@@ -511,7 +511,7 @@
      <item row="4" column="1">
       <widget class="QLabel" name="RespuestaPn">
        <property name="text">
-        <string/>
+        <string>...</string>
        </property>
       </widget>
      </item>
@@ -525,7 +525,7 @@
      <item row="5" column="1">
       <widget class="QLabel" name="RespuestaL">
        <property name="text">
-        <string/>
+        <string>...</string>
        </property>
       </widget>
      </item>
@@ -539,7 +539,7 @@
      <item row="6" column="1">
       <widget class="QLabel" name="RespuestaLq">
        <property name="text">
-        <string/>
+        <string>...</string>
        </property>
       </widget>
      </item>
@@ -553,7 +553,7 @@
      <item row="7" column="1">
       <widget class="QLabel" name="RespuestaLn">
        <property name="text">
-        <string/>
+        <string>...</string>
        </property>
       </widget>
      </item>
@@ -567,7 +567,7 @@
      <item row="8" column="1">
       <widget class="QLabel" name="RespuestaW">
        <property name="text">
-        <string/>
+        <string>...</string>
        </property>
       </widget>
      </item>
@@ -581,7 +581,7 @@
      <item row="9" column="1">
       <widget class="QLabel" name="RespuestaWq">
        <property name="text">
-        <string/>
+        <string>...</string>
        </property>
       </widget>
      </item>
@@ -595,7 +595,7 @@
      <item row="10" column="1">
       <widget class="QLabel" name="RespuestaWn">
        <property name="text">
-        <string/>
+        <string>...</string>
        </property>
       </widget>
      </item>
@@ -609,7 +609,7 @@
      <item row="2" column="1">
       <widget class="QLabel" name="RespuestaPk">
        <property name="text">
-        <string/>
+        <string>...</string>
        </property>
       </widget>
      </item>
@@ -798,7 +798,7 @@
      <item row="1" column="1">
       <widget class="QLabel" name="RespuestaCtte">
        <property name="text">
-        <string/>
+        <string>...</string>
        </property>
       </widget>
      </item>
@@ -812,7 +812,7 @@
      <item row="2" column="1">
       <widget class="QLabel" name="RespuestaCtts">
        <property name="text">
-        <string/>
+        <string>...</string>
        </property>
       </widget>
      </item>
@@ -826,7 +826,7 @@
      <item row="3" column="1">
       <widget class="QLabel" name="RespuestaCttse">
        <property name="text">
-        <string/>
+        <string>...</string>
        </property>
       </widget>
      </item>
@@ -840,14 +840,14 @@
      <item row="5" column="1">
       <widget class="QLabel" name="RespuestaCt">
        <property name="text">
-        <string/>
+        <string>...</string>
        </property>
       </widget>
      </item>
      <item row="4" column="1">
       <widget class="QLabel" name="RespuestaCts">
        <property name="text">
-        <string/>
+        <string>...</string>
        </property>
       </widget>
      </item>
@@ -920,7 +920,7 @@
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>610</y>
+      <y>600</y>
       <width>121</width>
       <height>21</height>
      </rect>
@@ -952,7 +952,7 @@
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>...</string>
     </property>
    </widget>
    <widget class="QLabel" name="RespuestaProbabilidad">
@@ -965,7 +965,7 @@
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>...</string>
     </property>
    </widget>
    <widget class="QLabel" name="LblFormula">
@@ -978,7 +978,7 @@
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>...</string>
     </property>
    </widget>
   </widget>
