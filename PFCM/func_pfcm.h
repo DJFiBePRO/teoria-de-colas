@@ -108,7 +108,9 @@ double CalcularLn(double miu,double landa, double M, double K)
 }
 double CalcularWq(double miu,double landa, double M, double K)
 {
-    double respuestaWq = CalcularLq(miu,landa,M,K) /((M-CalcularL(miu,landa,M,K) *landa));
+    double Lq=CalcularLq(miu,landa,M,K);
+    double L=CalcularL(miu,landa,M,K);
+    double respuestaWq = Lq/((M-L)*landa);
     return respuestaWq;
 }
 double CalcularW(double miu,double landa, double M, double K)
