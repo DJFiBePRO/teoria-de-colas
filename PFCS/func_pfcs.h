@@ -62,18 +62,33 @@ double CalcularWn(double miu,double landa,double M)
     double respuestaWn = CalcularWq(miu,landa,M) / (1 - CalcularPo(miu,landa,M));
     return respuestaWn;
 }
+double ComprobarHorasEsCero(double horas)
+{
+    double respuesta=0;
+    if(horas==0)
+    {
+        respuesta=1;
+    }
+    else {
+        respuesta=horas;
+    }
+    return respuesta;
+}
 double CalcularCtte(double miu,double landa,double M,double horas,double cte)
 {
+    horas=ComprobarHorasEsCero(horas);
     double respuestaCtte=(landa*horas*CalcularWq(miu,landa,M)*cte);
     return respuestaCtte;
 }
 double CalcularCtts(double miu,double landa,double M,double horas,double cts)
 {
+    horas=ComprobarHorasEsCero(horas);
     double respuestaCtts=(landa*horas*CalcularW(miu,landa,M)*cts);
     return respuestaCtts;
 }
 double CalcularCttse(double miu,double landa,double M,double horas,double ctse)
 {
+    horas=ComprobarHorasEsCero(horas);
     double respuestaCttse=(landa*horas*CalcularW(miu,landa,M)*ctse);
     return respuestaCttse;
 }
@@ -84,6 +99,7 @@ double CalcularCTs(double cs)
 }
 double CalcularCT(double miu,double landa,double M,double horas,double cte,double cts,double ctse,double cs)
 {
+    horas=ComprobarHorasEsCero(horas);
     double respuestaCt=CalcularCtte(miu,landa,M,horas,cte)+CalcularCtts(miu,landa,M,horas,cts)+CalcularCttse(miu,landa,M,horas,ctse)+CalcularCTs(cs);
     return respuestaCt;
 }
